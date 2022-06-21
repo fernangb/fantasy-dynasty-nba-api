@@ -1,7 +1,7 @@
 export default interface RepositoryInterface<Entity> {
-  create(props: Entity): Promise<void>;
+  create(entity: Entity): Promise<void>;
   findAll(): Promise<Entity[]>;
   findById(id: string): Promise<Entity>;
-  update(props: Entity): Promise<void>;
+  update(entity: Entity): Promise<void>;
   delete(id: string): Promise<void>;
 }

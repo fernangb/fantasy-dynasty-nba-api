@@ -1,14 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TeamService } from './team.service';
 import { TeamController } from './team.controller';
-import { TEAM_PROVIDERS } from './team.providers';
+import InMemoryTeamRepository from 'src/infra/database/teams/repositories/in-memory-team.repository';
 
 @Module({
   controllers: [TeamController],
-  providers: [
-    TeamService,
-    ...Object.values(TEAM_PROVIDERS.REPOSITORIES),
-    ...Object.values(TEAM_PROVIDERS.USE_CASES),
-  ],
+  providers: [TeamService, InMemoryTeamRepository],
 })
 export class TeamModule {}

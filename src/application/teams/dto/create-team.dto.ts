@@ -1,6 +1,4 @@
-import CreateTeamUseCase from 'src/use-cases/teams/create-team.use-case';
-
-export class CreateTeamDto implements CreateTeamUseCase.Input {
+export class CreateTeamDto {
   name: string;
   initials: string;
 }
